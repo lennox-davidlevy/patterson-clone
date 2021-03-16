@@ -1,0 +1,29 @@
+.list {
+  list-style: none;
+  padding: 0;
+}
+.scrolled {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: white;
+}
+.items {
+  margin-top: 2rem;
+  cursor: pointer;
+}
+.item_line {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 300;
+}
+.item_name {
+  font-weight: 400;
+}
+.sidebar {
+  height: 100%;
+  width: 160px;
+  position: sticky;
+  z-index: 1;
+  padding: 1rem;
+}

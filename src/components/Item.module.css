@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.title {
+  font-weight: 500;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.info > span {
+  font-weight: 300;
+  font-size: 14px;
+}
+.img {
+  opacity: 1;
+  transition: 0.1s all ease-in-out;
+}
+
+.img:hover {
+  opacity: 0.5;
+}

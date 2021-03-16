@@ -1,0 +1,38 @@
+.navbar {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  transition: all 0.2s ease-in;
+}
+.scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+}
+.list {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.items {
+  text-transform: uppercase;
+  list-style: none;
+  display: inline-block;
+  margin-right: 1rem;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+.items:after {
+  display: block;
+  content: "";
+  border-bottom: solid 3px rgba(0, 3, 161, 1);
+  transform-origin: 0 0;
+  transform: scaleX(0.001);
+  transition: transform 0.15s ease-out;
+}
+
+.items:hover:after {
+  transform: scaleX(1);
+}

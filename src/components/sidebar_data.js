@@ -1,0 +1,17 @@
+export const data = [
+  "Beige/Tan",
+  "Black",
+  "Black & White",
+  "Blue",
+  "Brown",
+  "Green",
+  "Grey",
+  "Multi-color",
+  "Natural",
+  "Orange",
+  "Pink",
+  "Purple",
+  "Red",
+  "Taupe",
+  "White",
+];

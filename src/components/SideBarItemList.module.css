@@ -1,0 +1,13 @@
+.radio {
+  margin-right: 10px;
+  border-radius: 0;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.item {
+  margin: 10px 0 0 0;
+  cursor: pointer;
+}
