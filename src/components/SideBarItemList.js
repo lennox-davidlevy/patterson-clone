@@ -1,22 +1,20 @@
 import React, { useState } from "react";
 import styles from "./SideBarItemList.module.css";
-const SideBarItemList = ({ data }) => {
-  const [selectedOption, setSelectedOption] = useState("");
-  const handleChange = (e) => {
-    setSelectedOption(e.target.value);
-  };
+const SideBarItemList = ({ data, selectedOptions, handleSelected }) => {
   return (
     <div className={styles.list}>
       {data.map((item) => {
         return (
-          <label className={styles.item}>
+          <label key={item} className={styles.item}>
             <input
+              key={item}
               className={styles.radio}
               type="radio"
               name={item}
               value={item}
-              checked={selectedOption === item}
-              onChange={handleChange}
+              checked={selectedOptions.indexOf(item) !== -1}
+              onClick={handleSelected}
+              onChange={handleSelected}
             />
             {item}
           </label>

@@ -4,12 +4,12 @@
   width: 100%;
   transition: all 0.2s ease-in;
 }
-.scrolled {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: white;
-}
+/*.scrolled {*/
+/*position: fixed;*/
+/*top: 0;*/
+/*left: 0;*/
+/*background: white;*/
+/*}*/
 .list {
   display: inline-block;
   vertical-align: middle;
@@ -35,4 +35,11 @@
 
 .items:hover:after {
   transform: scaleX(1);
+}
+
+.header {
+  text-align: center;
+  font-size: 60px;
+  font-weight: 400;
+  background: white;
 }

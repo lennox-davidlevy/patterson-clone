@@ -3,10 +3,10 @@
   padding: 0;
 }
 .scrolled {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
-  background-color: white;
+  background: white;
 }
 .items {
   margin-top: 2rem;
@@ -24,6 +24,5 @@
   height: 100%;
   width: 160px;
   position: sticky;
-  z-index: 1;
   padding: 1rem;
 }
