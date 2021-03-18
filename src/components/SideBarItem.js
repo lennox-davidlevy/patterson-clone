@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styles from "./SideBarItem.module.css";
 import SideBarItemList from "./SideBarItemList";
-import { data } from "./sidebar_data";
-const SideBarItem = ({ name }) => {
+//import { data } from "./sidebar_data";
+const SideBarItem = ({ name, data }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const handleClick = () => {

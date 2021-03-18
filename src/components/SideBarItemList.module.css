@@ -10,4 +10,7 @@
 .item {
   margin: 10px 0 0 0;
   cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 12px;
 }

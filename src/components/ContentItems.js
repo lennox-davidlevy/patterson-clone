@@ -2,9 +2,22 @@ import React from "react";
 import Item from "./Item";
 import styles from "./ContentItems.module.css";
 
-const ContentItems = ({ data, handleNextPage, handlePrevPage, page }) => {
-  const items = data.map((item) => {
-    return <Item key={item.id} item={item} />;
+const ContentItems = ({
+  data,
+  handleNextPage,
+  handlePrevPage,
+  page,
+  setSelectedItem,
+}) => {
+  const items = data.map((item, index) => {
+    return (
+      <Item
+        key={item.id}
+        item={item}
+        index={index}
+        setSelectedItem={setSelectedItem}
+      />
+    );
   });
   return (
     <div className={styles.container}>

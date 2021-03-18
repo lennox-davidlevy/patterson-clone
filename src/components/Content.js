@@ -10,17 +10,19 @@ const Content = ({
   handleNextPage,
   handlePrevPage,
   page,
+  setSelectedItem,
 }) => {
   return (
     <div className={styles.container}>
       <SideBar scrolled={scrolled} />
       {loading && <div>Loading...</div>}
-      {!loading && (
+      {!loading && data.length > 0 && (
         <ContentItems
           data={data}
           handlePrevPage={handlePrevPage}
           handleNextPage={handleNextPage}
           page={page}
+          setSelectedItem={setSelectedItem}
         />
       )}
     </div>
