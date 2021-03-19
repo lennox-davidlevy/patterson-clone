@@ -26,3 +26,8 @@
   position: sticky;
   padding: 1rem;
 }
+@media only screen and (max-width: 720px) {
+  .sidebar {
+    display: none;
+  }
+}

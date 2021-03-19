@@ -44,3 +44,9 @@
   background: white;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 720px) {
+  .list {
+    display: none;
+  }
+}

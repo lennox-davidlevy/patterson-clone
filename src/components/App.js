@@ -69,7 +69,11 @@ function App() {
     <div className={styles.container}>
       <NavBar scrolled={scrolled} setSelectedItem={setSelectedItem} />
       <div className={styles.select}>
-        <select value={orderby} onChange={handleOrderbyChange}>
+        <select
+          value={orderby}
+          onChange={handleOrderbyChange}
+          disabled={selectedItem !== null}
+        >
           <option value="date">Latest</option>
           <option value="title">A-Z</option>
         </select>
