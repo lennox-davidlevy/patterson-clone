@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 5000;
 const WooCommerceRestApi = require("@woocommerce/woocommerce-rest-api").default;
 require("dotenv").config();
 const app = express();
+
 const api = new WooCommerceRestApi({
   url: process.env.WP_URL,
   consumerKey: process.env.WP_EMAIL,
