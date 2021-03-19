@@ -18,5 +18,5 @@ Please go to root/.env and replace "ENTER_EMAIL" etc with the email, password an
 ## And then just run it!
 
 ```
-$ npm start
+$ npm run dev
 ```
