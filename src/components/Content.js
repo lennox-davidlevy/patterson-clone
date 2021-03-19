@@ -11,10 +11,14 @@ const Content = ({
   handlePrevPage,
   page,
   setSelectedItem,
+  setMasterSelectedOptions,
 }) => {
   return (
     <div className={styles.container}>
-      <SideBar scrolled={scrolled} />
+      <SideBar
+        scrolled={scrolled}
+        setMasterSelectedOptions={setMasterSelectedOptions}
+      />
       {loading && <div>Loading...</div>}
       {!loading && data.length > 0 && (
         <ContentItems

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./SideBarItem.module.css";
 import SideBarItemList from "./SideBarItemList";
 //import { data } from "./sidebar_data";
-const SideBarItem = ({ name, data }) => {
+const SideBarItem = ({ name, data, setMasterSelectedOptions }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const handleClick = () => {
@@ -12,16 +12,31 @@ const SideBarItem = ({ name, data }) => {
     const { value } = e.target;
     if (selectedOptions.indexOf(value) === -1) {
       const newOptions = [...selectedOptions, value];
-      const joinData = newOptions.join(",");
-      const data = { "color-family": joinData };
+      handleMasterFunction(name, newOptions);
+      //const newMasterOptions = { [name]: newOptions };
+      //setMasterSelectedOptions((prevOptions) => {
+      //return { ...prevOptions, ...newMasterOptions };
+      //});
 
-      //axios.get('/products', data).then(res => JSON.parse(res))
       setSelectedOptions(newOptions);
     } else {
       const newOptions = selectedOptions.filter((item) => item !== value);
-      console.log(newOptions);
+      //const newMasterOptions = { [name]: newOptions };
+      //setMasterSelectedOptions((prevOptions) => {
+      //return { ...prevOptions, ...newMasterOptions };
+      //});
+
+      handleMasterFunction(name, newOptions);
       setSelectedOptions(newOptions);
     }
+  };
+
+  const handleMasterFunction = (name, options) => {
+    if (name === "Width") return;
+    const newOptions = { [name]: options };
+    setMasterSelectedOptions((prevOptions) => {
+      return { ...prevOptions, ...newOptions };
+    });
   };
 
   return (

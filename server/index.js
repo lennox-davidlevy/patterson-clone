@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const PORT = process.env.PORT || 5000;
 const WooCommerceRestApi = require("@woocommerce/woocommerce-rest-api").default;
-//const WooCommerceAPI = require("woocommerce-api");
 const app = express();
 const api = new WooCommerceRestApi({
   url: "https://pattersonflynnmartin.com",
@@ -63,6 +62,7 @@ app.get("/tags", (req, res) => {
 app.get("/products", (req, res) => {
   const page = req.query.page;
   const orderby = req.query.orderby;
+  const filterList = req.query.masterSelectedOptions;
   api
     .get("products", {
       orderby: orderby,

@@ -1,9 +1,11 @@
 import React from "react";
 import styles from "./NavBar.module.css";
-const NavBar = ({ scrolled }) => {
+const NavBar = ({ scrolled, setSelectedItem }) => {
   return (
     <div className={styles.navbar}>
-      <header className={styles.header}>PFM</header>
+      <header className={styles.header} onClick={() => setSelectedItem(null)}>
+        PFM
+      </header>
       <ul className={styles.list}>
         <li className={styles.items}>New arrivals</li>
         <li className={styles.items}>In-Stock</li>

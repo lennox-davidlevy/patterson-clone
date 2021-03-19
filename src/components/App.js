@@ -11,6 +11,7 @@ function App() {
   const [page, setPage] = useState(1);
   const [orderby, setOrderby] = useState("date");
   const [selectedItem, setSelectedItem] = useState(null);
+  const [masterSelectedOptions, setMasterSelectedOptions] = useState({});
 
   //const [selectedOptions, setSelectedOptions] = useState([]);
   //const handleSelected = (e) => {
@@ -41,13 +42,15 @@ function App() {
   };
 
   useEffect(() => {
+    console.log(masterSelectedOptions);
+  }, [masterSelectedOptions]);
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
   });
 
   useEffect(() => {
     setLoading(true);
-    getItemsFromApi(page, orderby);
-    console.log(state);
+    getItemsFromApi(page, orderby, masterSelectedOptions);
   }, [page, orderby]);
   const handleNextPage = (e) => {
     e.preventDefault();
@@ -62,9 +65,15 @@ function App() {
     setPage(page - 1);
   };
 
-  const getItemsFromApi = (nPage, orderby) => {
+  const getItemsFromApi = (nPage, orderby, masterSelectedOptions) => {
     axios
-      .get("/products", { params: { page: nPage, orderby: orderby } })
+      .get("/products", {
+        params: {
+          page: nPage,
+          orderby: orderby,
+          masterSelectedOptions: masterSelectedOptions,
+        },
+      })
       .then((result) => setState(result.data))
       .then(() => setLoading(false))
       .catch((err) => console.log(err));
@@ -75,23 +84,31 @@ function App() {
   };
   return (
     <div className={styles.container}>
-      <NavBar scrolled={scrolled} />
+      <NavBar scrolled={scrolled} setSelectedItem={setSelectedItem} />
       <div className={styles.select}>
         <select value={orderby} onChange={handleOrderbyChange}>
           <option value="date">Latest</option>
           <option value="title">A-Z</option>
         </select>
       </div>
-      {selectedItem && <ItemPage data={state[selectedItem]} />}
-      <Content
-        handleNextPage={handleNextPage}
-        handlePrevPage={handlePrevPage}
-        loading={loading}
-        scrolled={scrolled}
-        data={state}
-        page={page}
-        setSelectedItem={setSelectedItem}
-      />
+      {selectedItem !== null && (
+        <ItemPage
+          setSelectedItem={setSelectedItem}
+          data={state[selectedItem]}
+        />
+      )}
+      {selectedItem === null && (
+        <Content
+          handleNextPage={handleNextPage}
+          handlePrevPage={handlePrevPage}
+          loading={loading}
+          scrolled={scrolled}
+          data={state}
+          page={page}
+          setSelectedItem={setSelectedItem}
+          setMasterSelectedOptions={setMasterSelectedOptions}
+        />
+      )}
     </div>
   );
 }
