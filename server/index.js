@@ -3,11 +3,19 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const PORT = process.env.PORT || 5000;
 const WooCommerceRestApi = require("@woocommerce/woocommerce-rest-api").default;
+require("dotenv").config();
 const app = express();
+//const api = new WooCommerceRestApi({
+//url: "https://pattersonflynnmartin.com",
+//consumerKey: "jd@lostin.com",
+//consumerSecret: "bbQgQAIp8Z6oWcSLtkZghAvG",
+//version: "wc/v3",
+//});
+
 const api = new WooCommerceRestApi({
-  url: "https://pattersonflynnmartin.com",
-  consumerKey: "jd@lostin.com",
-  consumerSecret: "bbQgQAIp8Z6oWcSLtkZghAvG",
+  url: process.env.WP_URL,
+  consumerKey: process.env.WP_EMAIL,
+  consumerSecret: process.env.WP_PASSWORD,
   version: "wc/v3",
 });
 
