@@ -13,25 +13,6 @@ function App() {
   const [selectedItem, setSelectedItem] = useState(null);
   const [masterSelectedOptions, setMasterSelectedOptions] = useState({});
 
-  //const [selectedOptions, setSelectedOptions] = useState([]);
-  //const handleSelected = (e) => {
-  //const { value } = e.target;
-  //if (selectedOptions.indexOf(value) === -1) {
-  //const newOptions = [...selectedOptions, value];
-  //const joinData = newOptions.join(",");
-  //const data = { "color-family": joinData };
-  ////axios.get('/products', data).then(res => JSON.parse(res))
-  //setSelectedOptions(newOptions);
-  //} else {
-  //const newOptions = selectedOptions.filter((item) => item !== value);
-  //console.log(newOptions);
-  //setSelectedOptions(newOptions);
-  //}
-  //};
-  //useEffect(() => {
-  ////axios.get()
-  //}, [selectedOptions]);
-
   const handleScroll = () => {
     const offset = window.scrollY;
     if (offset > 150) {
@@ -44,6 +25,7 @@ function App() {
   useEffect(() => {
     console.log(masterSelectedOptions);
   }, [masterSelectedOptions]);
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
   });
@@ -51,7 +33,7 @@ function App() {
   useEffect(() => {
     setLoading(true);
     getItemsFromApi(page, orderby, masterSelectedOptions);
-  }, [page, orderby]);
+  }, [page, orderby, masterSelectedOptions]);
   const handleNextPage = (e) => {
     e.preventDefault();
     setPage(page + 1);

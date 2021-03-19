@@ -63,6 +63,9 @@ app.get("/products", (req, res) => {
   const page = req.query.page;
   const orderby = req.query.orderby;
   const filterList = req.query.masterSelectedOptions;
+  //Filter list has this shape:
+  //{[name of attribute_1]:["attribute 1", "attribute 2"....], [name_of_attribute_2]:["attribute 1", "attribute 2"....]}
+  //I would then take the data from the filter list and use it create an object as a query param;
   api
     .get("products", {
       orderby: orderby,

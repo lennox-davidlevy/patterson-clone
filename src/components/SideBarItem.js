@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./SideBarItem.module.css";
 import SideBarItemList from "./SideBarItemList";
-//import { data } from "./sidebar_data";
 const SideBarItem = ({ name, data, setMasterSelectedOptions }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState([]);
@@ -13,19 +12,9 @@ const SideBarItem = ({ name, data, setMasterSelectedOptions }) => {
     if (selectedOptions.indexOf(value) === -1) {
       const newOptions = [...selectedOptions, value];
       handleMasterFunction(name, newOptions);
-      //const newMasterOptions = { [name]: newOptions };
-      //setMasterSelectedOptions((prevOptions) => {
-      //return { ...prevOptions, ...newMasterOptions };
-      //});
-
       setSelectedOptions(newOptions);
     } else {
       const newOptions = selectedOptions.filter((item) => item !== value);
-      //const newMasterOptions = { [name]: newOptions };
-      //setMasterSelectedOptions((prevOptions) => {
-      //return { ...prevOptions, ...newMasterOptions };
-      //});
-
       handleMasterFunction(name, newOptions);
       setSelectedOptions(newOptions);
     }
