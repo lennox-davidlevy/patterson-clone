@@ -62,6 +62,7 @@ function App() {
   };
 
   const handleOrderbyChange = (e) => {
+    setPage(1);
     setOrderby(e.target.value);
   };
   return (

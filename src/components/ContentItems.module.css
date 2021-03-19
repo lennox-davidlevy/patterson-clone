@@ -28,7 +28,13 @@
   background: white;
   color: rgba(0, 0, 0, 0.8);
 }
-
-.page_number > span {
-  margin: 0 auto;
+.page_number_container {
+  padding-top: 10px;
+}
+.page {
+  font-weight: 300;
+}
+.page_number {
+  font-weight: 500;
+  margin-left: 10px;
 }

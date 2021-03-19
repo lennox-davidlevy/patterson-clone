@@ -26,8 +26,9 @@ const ContentItems = ({
         <div className={styles.btn_page} onClick={handlePrevPage}>
           Prev
         </div>
-        <div className={styles.page_number}>
-          <span>Page: </span> <span>{page}</span>
+        <div className={styles.page_number_container}>
+          <span className={styles.page}>Page: </span>{" "}
+          <span className={styles.page_number}>{page}</span>
         </div>
         <div className={styles.btn_page} onClick={handleNextPage}>
           Next
