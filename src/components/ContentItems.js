@@ -39,9 +39,3 @@ const ContentItems = ({
 };
 
 export default ContentItems;
-
-//<button onClick={handlePrevPage}>Prev</button>
-//<div>
-//<span>Page: </span> <span>{page}</span>
-//</div>
-//<button onClick={handleNextPage}>Next</button>
