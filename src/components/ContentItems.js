@@ -23,14 +23,24 @@ const ContentItems = ({
     <div className={styles.container}>
       {items}
       <div className={styles.button_group}>
-        <button onClick={handlePrevPage}>Prev</button>
-        <div>
+        <div className={styles.btn_page} onClick={handlePrevPage}>
+          Prev
+        </div>
+        <div className={styles.page_number}>
           <span>Page: </span> <span>{page}</span>
         </div>
-        <button onClick={handleNextPage}>Next</button>
+        <div className={styles.btn_page} onClick={handleNextPage}>
+          Next
+        </div>
       </div>
     </div>
   );
 };
 
 export default ContentItems;
+
+//<button onClick={handlePrevPage}>Prev</button>
+//<div>
+//<span>Page: </span> <span>{page}</span>
+//</div>
+//<button onClick={handleNextPage}>Next</button>

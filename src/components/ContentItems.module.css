@@ -12,3 +12,23 @@
   flex-direction: row;
   justify-content: space-around;
 }
+
+.btn_page {
+  font-size: 13px;
+  text-align: center;
+  width: 100px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.btn_page:hover {
+  background: white;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.page_number > span {
+  margin: 0 auto;
+}
