@@ -25,6 +25,7 @@
   width: 200px;
   position: sticky;
   padding: 1rem;
+  margin-left: 15px;
 }
 @media only screen and (max-width: 720px) {
   .sidebar {
